@@ -37,6 +37,16 @@ https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
 
 #### Angular(ROTAS)
 
+1 - Crie um arquivo *.js e inclua ele abaixo do arquivo angular.js no header ou antes </body>
+
+2 - Inserir o caminho do arquivo angular.js no header da pagina index
+
+3 - Insira o arquivo angular-route.js ou angular-ui-router.js abaixo do arquivo angular.js 
+
+4 - crie a directiva <div ng-view></div>  ou <div ui-view></div> 
+
+5 - Crie uma navegação usando conceito  de SPA. 
+
 #### Angular(CRUD)
 
 #### Angular(HTTP)
