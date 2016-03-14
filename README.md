@@ -49,8 +49,9 @@ https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js
 
 #### Angular(CRUD)
 
-#### Angular(HTTP)
+1 - Faca um create update e delete em angular
 
+#### Angular(HTTP)
 
 
 
