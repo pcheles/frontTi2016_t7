@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app>
+<head>
+  <title>Lista de Contatos com AngularJS</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/toastr.css">
+  <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+  <div class="container" ng-controller="ListaTelefonicaController">
+
+    <div class="row">
+      <div class="page-header">
+        <div class="span9">
+          <h1>Lista de Contatos</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <table id="lista-contatos">
+
+        <tbody>
+          <tr ng-repeat="contato in contatos">
+            <td><strong>{{ contato.nome }}</strong></td>
+            <td>{{ contato.telefone }}</td>
+            <td>
+              <button class="btn btn-warning btn-small" ng-click="editaContato($index, contato)">
+                <i class="icon-pencil icon-white"></i> editar
+              </button>
+              <button class="btn btn-danger btn-small" ng-click="deletaContato($index)">
+                <i class="icon-trash icon-white"></i> deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="row form-inline" name="validarValoresPreenchidos">
+      <input type="text" ng-model="formulario.nome" placeholder="Nome" required>
+      <input type="number" ng-model="formulario.telefone" placeholder="Telefone" required>
+      <button ng-hide="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" 
+              ng-click="adicionaContato(formulario)">
+        <i class="icon-plus icon-white"></i> adicionar
+      </button>
+      <button ng-show="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" 
+              ng-click="aplicaEdicao(formulario)">
+        <i class="icon-ok icon-white"></i> salvar
+      </button>
+    </form>
+  </div>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="app/controllers.js"></script>
+</body>
+</html>
